@@ -12,11 +12,14 @@
 //char ssid[] = "S20 FE de Leonardo";
 //char senha[] = "yzhv4568";
 
-char ssid[] = "Redmi Note 13";
-char senha[] = "lucao123";
+//char ssid[] = "Redmi Note 13";
+//char senha[] = "lucao123";
 
 //char ssid[] = "João Arthur";
 //char senha[] = "12345678";
+
+char ssid[] = "PIC2-2.4G";
+char senha[] = "engcomp@ufes";
 
 BLYNK_WRITE(V0){
   
