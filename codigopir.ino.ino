@@ -6,11 +6,11 @@
 #define D0 16
 #define D2 4
 
+//http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-
-#include<ESP8266WiFi.h>
-#include<BlynkSimpleEsp8266.h>
-#include<Blynk.h>
+#include <ESP8266WiFi.h>
+#include <BlynkSimpleEsp8266.h>
+#include <Blynk.h>
 
 
 //char ssid[] = "S20 FE de Leonardo";
@@ -24,55 +24,41 @@
 
 char ssid[] = "PIC2-2.4G";
 char senha[] = "engcomp@ufes";
-int x =0;
+//int x = 0;
 
 
-BLYNK_WRITE(V0){
-  
-  int onoff  = param.asInt();
-  digitalWrite(D0,onoff);
+BLYNK_WRITE(V1) {
+
+  int onoff = param.asInt();
+  digitalWrite(D0, onoff);
 }
 
-void setup(){
+void setup() {
   Serial.begin(9600);
-  pinMode(D0,OUTPUT);
+  pinMode(D0, OUTPUT);
 
-  Blynk.begin(BLYNK_AUTH_TOKEN,ssid,senha,"blynk.cloud",80);
-
-  // Aguardar até que a conexão Wi-Fi e Blynk sejam feitas
-  while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(1000);
-  }
-  Serial.println("Conectado ao Wi-Fi!");
-  
-  while (!Blynk.connected()) {
-    Serial.print(".");
-    delay(1000);
-  }
-  Serial.println("Conectado ao Blynk!");
-
-
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, senha, "blynk.cloud", 80);
 }
 
-void loop(){
+void loop() {
 
 
   Blynk.run();
 
- x = digitalRead(D2);
- Serial.print(x);
- if(x==1){
-  digitalWrite(D0,HIGH);
+  int x = digitalRead(D2);
+  
+  if (x == 1) {
+    digitalWrite(D0, HIGH);
+    Blynk.virtualWrite(V1, 1);
+
+
+    delay(900);
+  } 
+  else if (x == 0) {
+    digitalWrite(D0, LOW);
+    Blynk.virtualWrite(V1, 0);
+  }
+
   Serial.println(x);
- }
- else if(x==0){
-   digitalWrite(D0,LOW);
- }
- // Serial.println(onoff);
-
-
-
-
-//delay(1000);
+  //Serial.println(onoff);
 }
