@@ -32,7 +32,7 @@
 ### Hardware - Montagem
  A montagem do dispositivo envolve os seguintes componentes:
 - ESP8266: Responsável pela conexão Wi-Fi e envio de notificações.
-- Sensor MQ-2: Detecta gases inflamáveis e fumaça.
+- Sensor MQ-2: Detecta gases inflamáveis.
 - Sensor PIR: Detecta a presença de movimentos no ambiente.
 - LEDs (3x):
   - LED 1: Alerta de presença.
