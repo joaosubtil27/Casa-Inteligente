@@ -19,7 +19,7 @@
 
 
 ### Descrição
-#### O projeto consiste em um aparelho que detecta a presença de inflamáveis no ambiente, por meio do sensor MQ-2, e, ao ultrapassar os limites estabelecidos, notifica o usuário cadastrado, enviado pelo ESP8266 e recebido pelo aplicativo do Blynk, sobre o ocorrido, auxiliando na prevenção de possíveis incêndios. Além disso, o aparelho contém um sensor de presença, que quando o usuário avisar que estiver fora de casa, analisa se houve ou não uma movimentação no ambiente, e, em caso afirmativo, também comunica o usuário pelo mesmo app.
+#### O projeto consiste em um aparelho que detecta a presença de inflamáveis no ambiente e, ao ultrapassar os limites estabelecidos, notifica o usuário cadastrado sobre o ocorrido, enviado pelo ESP8266 e recebido pelo aplicativo do Blynk, no celular dele, auxiliando na prevenção de possíveis incêndios. Além disso, o aparelho contém um sensor de presença, que quando o usuário avisar que estiver fora de casa, analisa se houve ou não uma movimentação no ambiente, e, em caso afirmativo, também comunica o usuário pelo mesmo app.
 
 ### Componentes
 ### Hardware - Montagem
