@@ -19,7 +19,7 @@
 
 
 ### Descrição
-#### O projeto consiste em um aparelho que detecta a presença de inflamáveis no ambiente e, ao ultrapassar os limites estabelecidos, notifica o usuário cadastrado sobre o ocorrido, enviado pelo ESP8266 e recebido pelo aplicativo do Blynk, no celular dele, auxiliando na prevenção de possíveis incêndios. Além disso, o aparelho contém um sensor de presença, que quando o usuário avisar que estiver fora de casa, analisa se houve ou não uma movimentação no ambiente, e, em caso afirmativo, também comunica o usuário pelo mesmo app.
+#### O projeto consiste em um dispositivo capaz de detectar a presença de substâncias inflamáveis no ambiente. Caso os níveis ultrapassem os limites preestabelecidos, o sistema notifica o usuário cadastrado por meio de uma conexão sem fio, enviando a informação para um aplicativo móvel, ajudando na prevenção de incêndios. Além disso, o dispositivo possui um sensor de presença que, ao ser informado sobre a ausência do usuário, monitora possíveis movimentos no ambiente e, caso detecte alguma movimentação, envia uma notificação ao usuário pelo mesmo aplicativo.
 
 ### Componentes
 ### Hardware - Montagem
