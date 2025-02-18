@@ -19,7 +19,7 @@
 
 
 ### Descrição
-#### O projeto consiste em um dispositivo capaz de detectar a presença de substâncias inflamáveis no ambiente. Caso os níveis ultrapassem os limites preestabelecidos, o sistema notifica o usuário cadastrado por meio de uma conexão sem fio, enviando a informação para um aplicativo móvel, ajudando na prevenção de incêndios. Além disso, o dispositivo possui um sensor de presença que, ao ser informado sobre a ausência do usuário, monitora possíveis movimentos no ambiente e, caso detecte alguma movimentação, envia uma notificação ao usuário pelo mesmo aplicativo.
+#### O projeto consiste em um dispositivo capaz de detectar a presença de substâncias inflamáveis no ambiente e, caso os níveis ultrapassem os limites preestabelecidos, o sistema notifica o usuário cadastrado por meio de uma conexão sem fio, enviando a informação para um aplicativo móvel, ajudando, dessa forma, na prevenção de incêndios. Além disso, o dispositivo possui um sensor de presença que, ao ser informado sobre a ausência do usuário, monitora possíveis movimentos no ambiente e, caso algo seja detectado, envia uma notificação ao usuário pelo mesmo aplicativo.
 
 ### Componentes
 ### Hardware - Montagem
