@@ -40,6 +40,7 @@
   - LED 3: Indica se o modo férias está ativado.
 - Resistores (3x): 330Ω para os LEDs.
 - Protoboard e Jumpers: Para as conexões entre os componentes.
+
 Conexões principais:
 1. O ESP8266 se conecta ao MQ-2 (pino analógico) e ao PIR (pino digital).
 2. LEDs são conectados aos pinos digitais do ESP8266.
