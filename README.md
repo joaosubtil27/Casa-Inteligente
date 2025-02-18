@@ -30,6 +30,20 @@
 - 3x Resistores (330Ω)
 - 11x Jumpers
 ### Hardware - Montagem
-As conexões 
+ A montagem do dispositivo envolve os seguintes componentes:
+- ESP8266: Responsável pela conexão Wi-Fi e envio de notificações.
+- Sensor MQ-2: Detecta gases inflamáveis e fumaça.
+- Sensor PIR: Detecta a presença de movimentos no ambiente.
+- LEDs (3x):
+  - LED 1: Alerta de presença.
+  - LED 2: Alerta de gás inflamável detectado.
+  - LED 3: Indica se o modo férias está ativado.
+- Resistores (3x): 330Ω para os LEDs.
+- Protoboard e Jumpers: Para as conexões entre os componentes.
+Conexões principais:
+1. O ESP8266 se conecta ao MQ-2 (pino analógico) e ao PIR (pino digital).
+2. LEDs são conectados aos pinos digitais do ESP8266.
+3. Jumpers para interligar os componentes à protoboard.
+Após a montagem, o dispositivo monitora gases inflamáveis, detecta presença e envia notificações via Wi-Fi para o aplicativo móvel. O LED 3 indica quando o modo férias está ativado.
 ### Software - Programação
 ### Conexão - Notificação via Wi-Fi
