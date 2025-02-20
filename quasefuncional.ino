@@ -56,11 +56,8 @@ void setup(){
   pinMode(D2, OUTPUT);
   Blynk.begin(BLYNK_AUTH_TOKEN,ssid,senha,"blynk.cloud",80);
   
-
   base = calculaBase();
   
-  
-
 }
 
 void loop(){
@@ -105,16 +102,13 @@ void detecta(){
 void  PIR(){
   int sensor_presenca = digitalRead(D4);
   
-  if (sensor_presenca == 1) {
-    digitalWrite(D2 , HIGH);
-    Blynk.virtualWrite(V1, 1);
-   // Blynk.logEvent("alerta","ladrao");
-
-  } 
-  else if (sensor_presenca == 0) {
-    digitalWrite(D2, LOW);
-    Blynk.virtualWrite(V1, 0);
-  }
+void  PIR(){
+  int sensor_presenca = digitalRead(D4);
+  
+  digitalWrite(D2, sensor_presenca);
+  Blynk.virtualWrite(V1, sensor_presenca);
+  
+}
 
 
 }
