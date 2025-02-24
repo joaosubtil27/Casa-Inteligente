@@ -37,6 +37,8 @@
 3. Ligar o sensor PIR a um pino digital do ESP8266.
 4. Conectar os LEDs aos pinos digitais apropriados, com resistores de 330Ω.
 5. Garantir a alimentação correta do circuito através do ESP8266.
+
+![Montagem Casa Inteligente](https://drive.google.com/file/d/1Cv7eNvABTyhJhXZfBSTLnNtI8Cu3beo0/view?usp=drive_link)
 ### Software - Programação
 O código do projeto foi desenvolvido em C++ utilizando a IDE Arduino. Funções principais:
 - Leitura dos sensores (MQ-2 e PIR)
