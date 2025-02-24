@@ -38,7 +38,7 @@
 4. Conectar os LEDs aos pinos digitais apropriados, com resistores de 330Ω.
 5. Garantir a alimentação correta do circuito através do ESP8266.
 
-![Montagem Casa Inteligente](https://drive.google.com/file/d/1Cv7eNvABTyhJhXZfBSTLnNtI8Cu3beo0/view?usp=drive_link)
+![Montagem Casa Inteligente](https://github.com/joaosubtil27/Casa-Inteligente/blob/e343903197a8cfcee064473e2650a8ebc7bfd2d4/Esquema%20PIC.PNG)
 ### Software - Programação
 O código do projeto foi desenvolvido em C++ utilizando a IDE Arduino. Funções principais:
 - Leitura dos sensores (MQ-2 e PIR)
