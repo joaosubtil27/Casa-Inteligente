@@ -101,15 +101,8 @@ void detecta(){
 
 void  PIR(){
   int sensor_presenca = digitalRead(D4);
-  
-void  PIR(){
-  int sensor_presenca = digitalRead(D4);
-  
   digitalWrite(D2, sensor_presenca);
   Blynk.virtualWrite(V1, sensor_presenca);
   
-}
-
-
 }
 
