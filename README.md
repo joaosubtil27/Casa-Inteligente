@@ -48,4 +48,5 @@ A comunicação do sistema ocorre via Blynk, permitindo notificações em tempo 
 1. O ESP8266 conecta-se ao Wi-Fi utilizando as credenciais armazenadas.
 2. Quando um evento é detectado (gás inflamável ou movimento), o ESP8266 aciona o Blynk.
 3. O Blynk envia uma notificação push para o usuário via smartphone.
+
 Essa abordagem facilita a interação remota e garante a segurança do ambiente monitorado.
