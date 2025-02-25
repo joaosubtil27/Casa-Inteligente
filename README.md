@@ -45,6 +45,7 @@ O código do projeto foi desenvolvido em C++ utilizando a IDE Arduino. Funções
 - Controle dos LEDs de alerta
 - Conexão Wi-Fi com a rede local
 - Interação com o Blynk para envio de notificações
+
 No código, o modo férias é uma funcionalidade que desativa a detecção do sensor PIR. Isso é útil quando o usuário não está em casa, pois impede que o sistema envie notificações desnecessárias de movimento. O modo pode ser ativado ou desativado por meio do aplicativo remoto do Blynk.
 ### Conexão - Notificação via Wi-Fi
 A comunicação do sistema ocorre via Blynk, permitindo notificações em tempo real no aplicativo móvel:
