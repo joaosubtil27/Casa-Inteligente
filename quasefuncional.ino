@@ -3,20 +3,26 @@
 #define BLYNK_TEMPLATE_NAME "pic1"
 #define BLYNK_AUTH_TOKEN "sc-rMH4-5lgXbUn8vyISntzmLS3vUUI1"
 #define BLYNK_PRINT Serial
-#define D0 16 // LED
-#define D2 4 // led PIR
-#define D3 0 // LED blynk
-#define D4 2 //sensor PIR
-//#define D5 14 //led PIR
+#define D1 5 // LED 
+#define D2 4 // led PIR 
+#define D5 14 // LED ferias
+#define D6 12 //sensor PIR 
 #define tempo 55
 #define variacao 40
 int soma = 0;
 int base;
 int ferias;
+int sensor_fumaca = 0;
+ int sensor_presenca = 0;
+
+int leiturapir;
 
 #include<ESP8266WiFi.h>
 #include<BlynkSimpleEsp8266.h>
 #include<Blynk.h>
+
+BlynkTimer timer;
+
 
 //http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
@@ -29,11 +35,23 @@ int ferias;
 //char ssid[] = "João Arthur";
 //char senha[] = "12345678";
 
-//char ssid[] = "LUCIANA";
-//char senha[] = "MM832311";
+char ssid[] = "LUCIANA";
+char senha[] = "MM832311";
 
-char ssid[] = "PIC2-2.4G";
-char senha[] = "engcomp@ufes";
+//char ssid[] = "PIC2-2.4G";
+//char senha[] = "engcomp@ufes";
+
+void enviarInfo(){
+
+  Blynk.virtualWrite(V3, sensor_fumaca);
+
+  if( sensor_presenca>0)  Blynk.virtualWrite(V0, HIGH);
+  else Blynk.virtualWrite(V0, LOW);
+
+  Blynk.run();
+  
+}
+
 
 BLYNK_CONNECTED(){
   Blynk.syncVirtual(V2);
@@ -42,19 +60,21 @@ BLYNK_CONNECTED(){
 
 BLYNK_WRITE(V2){
 
-  int onoff  = param.asInt();
-  ferias = onoff;
-  digitalWrite(D3,onoff);
+  ferias = param.asInt();
+  digitalWrite(D5,ferias);
 }
 
 void setup(){
   Serial.begin(9600);
-  pinMode(D3, OUTPUT);
-  pinMode(D0, OUTPUT);
+  delay(500);
+  pinMode(D5, OUTPUT);
+  pinMode(D1, OUTPUT);
   pinMode(A0, INPUT);
-  pinMode(D4,INPUT);
+  pinMode(D6, INPUT);
   pinMode(D2, OUTPUT);
+ 
   Blynk.begin(BLYNK_AUTH_TOKEN,ssid,senha,"blynk.cloud",80);
+  timer.setInterval(100L, enviarInfo);
   
   base = calculaBase();
   
@@ -63,22 +83,20 @@ void setup(){
 void loop(){
   
  
-  Blynk.run();
-  detecta();
-  if(ferias==1){
-    PIR();
-  }
 
-delay(100);
+  timer.run();
+  detecta();
+  PIR();
+
 }
 
 int calculaBase(){
 
   for(int i=0;i<tempo;i++){
-    digitalWrite(D0, HIGH);
+    digitalWrite(D1, HIGH);
     delay(50);
     soma+= analogRead(A0);
-    digitalWrite(D0, LOW);
+    digitalWrite(D1, LOW);
     delay(50);
   }
 
@@ -87,22 +105,24 @@ int calculaBase(){
 
 void detecta(){
 
-  int sensor_fumaca = analogRead(A0);
+  sensor_fumaca = analogRead(A0);
  
   if((sensor_fumaca-base)>=variacao){
-    digitalWrite(D0, HIGH);
+    digitalWrite(D1, HIGH);
   }else{ 
-    digitalWrite(D0, LOW);
+    digitalWrite(D1, LOW);
   }
 
   Serial.println(sensor_fumaca);
 
 }
 
-void  PIR(){
-  int sensor_presenca = digitalRead(D4);
-  digitalWrite(D2, sensor_presenca);
-  Blynk.virtualWrite(V1, sensor_presenca);
-  
+void PIR() {
+  if(ferias){
+    int leitura_atual = digitalRead(D6);
+    digitalWrite(D2, leitura_atual);
+
+  }
+
 }
 
