@@ -19,7 +19,7 @@
 
 
 ### Descrição
- O projeto consiste em um dispositivo capaz de detectar a presença de substâncias inflamáveis no ambiente e, caso os níveis ultrapassem os limites preestabelecidos, o sistema notifica o usuário cadastrado por meio de uma conexão sem fio, enviando a informação para um aplicativo móvel, ajudando, dessa forma, na prevenção de incêndios. Além disso, o dispositivo possui um sensor de presença que, ao ser informado sobre a ausência do usuário, monitora possíveis movimentos no ambiente e, caso algo seja detectado, envia uma notificação ao usuário pelo mesmo aplicativo.
+ O projeto é um sistema de monitoramento que detecta substâncias inflamáveis e presença no ambiente, enviando notificações via Wi-Fi ao usuário. Ele conta com sensores MQ-2 (gás inflamável) e PIR (presença). O Modo Férias permite desativar a detecção de presença do sensor PIR, evitando notificações indesejadas quando o usuário não está em casa, como durante viagens ou períodos de ausência.
 
 ### Componentes
 - Microcontrolador: ESP8266
@@ -45,6 +45,7 @@ O código do projeto foi desenvolvido em C++ utilizando a IDE Arduino. Funções
 - Controle dos LEDs de alerta
 - Conexão Wi-Fi com a rede local
 - Interação com o Blynk para envio de notificações
+No código, o modo férias é uma funcionalidade que desativa a detecção do sensor PIR. Isso é útil quando o usuário não está em casa, pois impede que o sistema envie notificações desnecessárias de movimento. O modo pode ser ativado ou desativado por meio do aplicativo remoto do Blynk.
 ### Conexão - Notificação via Wi-Fi
 A comunicação do sistema ocorre via Blynk, permitindo notificações em tempo real no aplicativo móvel:
 1. O ESP8266 conecta-se ao Wi-Fi utilizando as credenciais armazenadas.
