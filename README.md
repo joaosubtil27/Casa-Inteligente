@@ -19,7 +19,7 @@
 
 
 ### Descrição
- O projeto é um sistema de monitoramento que detecta substâncias inflamáveis e presença no ambiente, enviando notificações via Wi-Fi ao usuário. Ele conta com sensores MQ-2 (gás inflamável) e PIR (presença). Contém um modo férias que permite desativar a detecção de presença do sensor PIR, evitando notificações indesejadas quando o usuário não está em casa, como durante viagens ou períodos de ausência.
+ O projeto é um sistema de monitoramento que detecta substâncias inflamáveis e presença no ambiente, enviando notificações via Wi-Fi ao usuário. Ele conta com sensores MQ-2 (gás inflamável) e PIR (presença). Contém um modo férias que permite desativar a detecção de presença do sensor PIR, evitando notificações indesejadas quando o usuário está em casa.
 
 ### Componentes
 - Microcontrolador: ESP8266
