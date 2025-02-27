@@ -7,8 +7,8 @@
 #define D5 14 // LED blynk
 #define D6 12 //sensor PIR
 //#define D5 14 //led PIR
-#define tempo 55
-#define variacao 40
+#define tempo 70
+#define variacao 30
 int soma = 0;
 int base;
 int ferias;
@@ -64,10 +64,10 @@ pinMode(D6,INPUT);
 pinMode(D2, OUTPUT);
 
 Blynk.begin(BLYNK_AUTH_TOKEN,ssid,senha);
-timer.setInterval(1000L, enviaInfos);
+timer.setInterval(2000L, enviaInfos);
 
 base = calculaBase();
-
+Serial.println(base);
 
 }
 
@@ -79,7 +79,7 @@ timer.run();
 detecta();
 PIR();
 
-
+delay(50);
 }
 
 int calculaBase(){
