@@ -1,7 +1,6 @@
-
-#define BLYNK_TEMPLATE_ID "TMPL2oBTUo08S"
+#define BLYNK_TEMPLATE_ID "TMPL2Rugz1TRW"
 #define BLYNK_TEMPLATE_NAME "pic1"
-#define BLYNK_AUTH_TOKEN "sc-rMH4-5lgXbUn8vyISntzmLS3vUUI1"
+#define BLYNK_AUTH_TOKEN "XRhkG53gNs_IBDG0CcoE2MDlDBluQrts"
 #define BLYNK_PRINT Serial
 #define D1 5 // LED
 #define D2 4 // led PIR
@@ -17,6 +16,9 @@ int ferias;
 #include<ESP8266WiFi.h>
 #include<BlynkSimpleEsp8266.h>
 #include<Blynk.h>
+
+BlynkTimer timer;
+
 
 //http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
@@ -42,10 +44,16 @@ Blynk.syncVirtual(V2);
 
 BLYNK_WRITE(V2){
 
-int onoff  = param.asInt();
-ferias = onoff;
-digitalWrite(D5,onoff);
+ferias  = param.asInt();
+digitalWrite(D5,ferias);
 }
+void enviaInfos(){
+
+  int sensor_fumaca = analogRead(A0);
+  Blynk.virtualWrite(V0, sensor_fumaca);
+
+}
+
 
 void setup(){
 Serial.begin(9600);
@@ -54,12 +62,12 @@ pinMode(D1, OUTPUT);
 pinMode(A0, INPUT);
 pinMode(D6,INPUT);
 pinMode(D2, OUTPUT);
-Blynk.begin(BLYNK_AUTH_TOKEN,ssid,senha,"blynk.cloud",80);
 
+Blynk.begin(BLYNK_AUTH_TOKEN,ssid,senha);
+timer.setInterval(1000L, enviaInfos);
 
 base = calculaBase();
 
-  
 
 }
 
@@ -67,10 +75,10 @@ void loop(){
 
 
 Blynk.run();
+timer.run();
 detecta();
+PIR();
 
-if(ferias)PIR();
-delay(100);
 
 }
 
@@ -93,29 +101,27 @@ int sensor_fumaca = analogRead(A0);
 
 if((sensor_fumaca-base)>=variacao){
 digitalWrite(D1, HIGH);
+ Blynk.logEvent("fumacadetectada");
 }else{ 
 digitalWrite(D1, LOW);
 }
 
-Serial.println(sensor_fumaca);
 
 }
 
 void  PIR(){
-  
+  if(ferias){
     int sensor_presenca = digitalRead(D6);
 
     if (sensor_presenca == 1) {
       digitalWrite(D2 , HIGH);
-      Blynk.virtualWrite(V1, 1);
-      Blynk.logEvent("alarme");
+      
+      Blynk.logEvent("sensorpresenca");
 
     } 
     else if (sensor_presenca == 0) {
       digitalWrite(D2, LOW);
-      Blynk.virtualWrite(V1, 0);
+    }
   }
-
-
+    
 }
-
