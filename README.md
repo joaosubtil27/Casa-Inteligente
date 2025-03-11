@@ -45,6 +45,20 @@ O código do projeto foi desenvolvido em C++ utilizando a IDE Arduino. Funções
 - Controle dos LEDs de alerta
 - Conexão Wi-Fi com a rede local
 - Interação com o Blynk para envio de notificações
+  
+Para o código rodar é necessário que o usuário baixe as bibliotecas: 
+- Blynk.h
+- ESP8266WiFi.h
+- BlynkSimpleEsp8266.h
+
+Como o Arduino IDE não espera ser conectado com o ESP é necessário mudar algumas configurações para usá-lo.
+
+- Ir em File (Arquivos), depois em Preferences(Preferências)
+- Copiar o link "http://arduino.esp8266.com/stable/package_esp8266com_index.json" em Additional boards manager URLs (URLs adicionais do gerenciador de placas)
+- Ir em Tools(Ferramentas), depois em Board (Placa) e, em seguida, Boards Manager(Gerenciador de placas)
+- Baixar a placa esp8266
+
+Agora todas as configurações para rodar o código estão prontas!
 
 No código, o modo férias é uma funcionalidade que desativa a detecção do sensor PIR. Isso é útil quando o usuário está em casa, pois impede que o sistema envie notificações desnecessárias de movimento. O modo pode ser ativado ou desativado por meio do aplicativo remoto do Blynk.
 ### Conexão - Notificação via Wi-Fi
