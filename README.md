@@ -48,7 +48,7 @@ O código do projeto foi desenvolvido em C++ utilizando a IDE Arduino. Funções
   
 Para o código rodar é necessário que o usuário baixe as bibliotecas: 
 - Blynk.h
-- ESP8266WiFi.h
+- ESP8266Wi-Fi.h
 - BlynkSimpleEsp8266.h
 
 Como o Arduino IDE não espera ser conectado com o ESP é necessário mudar algumas configurações para usá-lo.
@@ -57,6 +57,10 @@ Como o Arduino IDE não espera ser conectado com o ESP é necessário mudar algu
 - Copiar o link "http://arduino.esp8266.com/stable/package_esp8266com_index.json" em Additional boards manager URLs (URLs adicionais do gerenciador de placas)
 - Ir em Tools(Ferramentas), depois em Board (Placa) e, em seguida, Boards Manager(Gerenciador de placas)
 - Baixar a placa esp8266
+
+Além disso, é necessário informar o Wi-Fi e a senha para o sistema enviar as notificações ao usuário:
+- Em "char ssid[]" coloca-se o nome da rede; Ex: char ssid[] = "PIC2-2.4G";
+- Já em "char senha[]" é inserido a senha do Wi-Fi; Ex char senha[] = "engcomp@ufes";
 
 Agora todas as configurações para rodar o código estão prontas!
 
