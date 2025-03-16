@@ -72,3 +72,5 @@ A comunicação do sistema ocorre via Blynk, permitindo notificações em tempo 
 3. O Blynk envia uma notificação push para o usuário via smartphone.
 
 Essa abordagem facilita a interação remota e garante a segurança do ambiente monitorado.
+### Demonstração do Projeto 🎥
+[![Assista ao vídeo](https://img.youtube.com/vi/3e1H5Q1ze2E/maxresdefault.jpg)](https://youtu.be/3e1H5Q1ze2E)
